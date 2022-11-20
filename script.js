@@ -1,7 +1,7 @@
-const useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const isSmallScreen = window.matchMedia('(max-width: 1023.5px)').matches;
 
 tinymce.init({
-  selector: 'textarea',
+  selector: '#editor',
   plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons',
   editimage_cors_hosts: ['picsum.photos'],
   menubar: 'file edit view insert format tools table help',
@@ -48,7 +48,7 @@ tinymce.init({
   ],
   template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
   template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
-  height: 600,
+  height: "96vh",
   image_caption: true,  
   quickbars_insert_toolbar: 'quicktable image media codesample',
   quickbars_selection_toolbar: 'bold italic underline | blocks | bullist numlist | blockquote quicklink',
@@ -57,6 +57,5 @@ tinymce.init({
   toolbar_mode: 'sliding',
   powerpaste_word_import: 'clean',
   powerpaste_html_import: 'clean',
-  content_css: useDarkMode ? 'dark' : 'default',
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
 });
