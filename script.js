@@ -1,4 +1,5 @@
 const isSmallScreen = window.matchMedia('(max-width: 1023.5px)').matches;
+const useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 tinymce.init({
   selector: '#editor',
